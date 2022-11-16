@@ -1,5 +1,8 @@
 <template>
-  <Content></Content>
+  <Content :num="1" str="hello" @hello="sayHello">
+    <template #qwe>你好</template>
+    <template #asd></template>
+  </Content>
 </template>
 <script>
 import Content from "./components/content.vue";

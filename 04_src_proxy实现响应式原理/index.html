@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let person = {
+            name:'Tinker',
+            age:18,
+        }
+
+        let p = Proxy(person,{
+            // 获取属性中的数据拦截
+            get(target,prop){
+                return Reflect(target,prop)
+            },
+            // 数据修改，数据追加实现数据拦截
+            set(target,prop,newVal){
+                Reflect.set(target,prop,newVal)
+            },
+            // 删除数据实现数据拦截
+            deleteProperty(target,prop){
+                Reflect.deleteProperty(target,prop)
+            }
+        })
+    </script>
+</body>
+</html>

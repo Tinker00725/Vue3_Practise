@@ -10,12 +10,14 @@ export default {
   name: "App",
   components: { Content },
   setup() {
+    let num = ref(123);
     function sayHello(params) {
       alert(`你好，我是hello ${params}`);
     }
     let show = ref(true);
     return {
       sayHello,
+      num,
       show,
     };
   },

@@ -1,10 +1,10 @@
 <template>
-  <button @click="show = !show">显示/消失</button>
-  <br />
+  <button @click="show=!show">显示/消失</button>
+  <br>
   <Content v-if="show"></Content>
 </template>
 <script>
-import { ref } from "vue";
+import {ref} from 'vue'
 import Content from "./components/content.vue";
 export default {
   name: "App",
@@ -16,7 +16,7 @@ export default {
     let show = ref(true);
     return {
       sayHello,
-      show,
+      show
     };
   },
 };

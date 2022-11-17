@@ -1,47 +1,12 @@
 <template>
-  现在的数字:{{num}}
-  <br>
-  <button @click="num++">数字加一</button>
-  <br>
-  现在的文字:{{str}}
-  <br>
-  <button @click="str+='!'">文字加感叹号</button>
-  <h2>salary:{{person.job.mainJob.salary}}</h2>
-  <button @click="person.job.mainJob.salary++">加薪</button>
-  <h2>{{person.age}}</h2>
-  <button @click="person.age++">年龄增加</button>
+  
 </template>
 
 <script>
-import {reactive, ref,watch, watchEffect} from 'vue'
 export default {
-  name:"Content",
+  name:'Demo',
   setup(){
-    let num = ref(0);
-    let str = ref('你好啊');
-    let person = reactive({//注意这里用了ref
-      name:'Tinker',
-      age:18,
-      job:{
-        mainJob:{
-          job1:'worker',
-          salary:20
-        }      }
-    })
-    watch(person,(newVal,oldVal)=>{
-      console.log(newVal,oldVal)
-    })
-    watchEffect((newVal,oldVal)=>{
-      let x1 = num.value;
-      let x2 = person.job
-      console.log(newVal,oldVal)
-    })
-
-    return {
-      num,
-      str,
-      person
-    }
+    
   }
 }
 </script>
